@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "855010852489",
+    "firebase_url": "https://chatyuk-apps.firebaseio.com",
+    "project_id": "chatyuk-apps",
+    "storage_bucket": "chatyuk-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855010852489:android:6b4d2923ca52f980",
+        "android_client_info": {
+          "package_name": "com.pencetcodestudio.chatyuk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855010852489-a4lg2tna0h7kuebj6r5d0cp1dbm8mofl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pencetcodestudio.chatyuk",
+            "certificate_hash": "442d04e35ab2c84d411f557c4528239f0fd24ef0"
+          }
+        },
+        {
+          "client_id": "855010852489-oku6fnad8lcabsvo5a6c3c2fmqegs3ks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDL2DAP22gwYBbDqfRSrXk69nEacEwpxE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855010852489-oku6fnad8lcabsvo5a6c3c2fmqegs3ks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
