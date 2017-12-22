@@ -1,49 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.pencetcodestudio.chatyuk.activity_chatroom"
-    android:weightSum="1">
+    android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="378dp"
-        android:layout_height="157dp"
-        android:id="@+id/scrollView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_weight="1.04">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/textView" />
-    </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/message_user"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="1">
-        <EditText
-            android:layout_width="59dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_alignTop="@+id/button"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/button"
-            android:layout_weight="1.02" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textStyle="normal|bold" />
 
-        <Button
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button"
-            style="?android:attr/borderlessButtonStyle"
-            android:drawableLeft="@drawable/send"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true" />
+    <TextView
+        android:id="@+id/message_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/message_user"
+        android:layout_alignParentRight="true" />
 
-    </LinearLayout>
-</LinearLayout>
+    <TextView
+        android:id="@+id/message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/message_user"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true" />
+</RelativeLayout>
