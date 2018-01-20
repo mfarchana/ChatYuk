@@ -1,10 +1,10 @@
 package com.pencetcodestudio.chatyuk;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,23 +16,37 @@ import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 public class MainActivity extends AppCompatActivity {
     int SIGN_IN_REQUEST_CODE = 1;
+    private static final String APP_ID = "ca-app-pub-5466668563968121~4560384747";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Initialize the Mobile Ads SDK.
+        MobileAds.initialize(this, APP_ID);
+        AdView adview = (AdView) findViewById(R.id.adView);
+        AdRequest  adRequest = new AdRequest.Builder().build();
+        adview.loadAd(adRequest);
+
+
         //Posisi login, apakah udah login atau belum
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_REQUEST_CODE);
-        } else {
-            Toast.makeText(this, "Hello " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(this, "Hello " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName(),
+                    Toast.LENGTH_LONG).show();
             displayMessages();
         }
 
@@ -44,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 //Deklarasi ID input
                 EditText input = (EditText) findViewById(R.id.input);
                 //Kirim data ke Database firebase
-                FirebaseDatabase.getInstance().getReference().push().setValue(new activity_chatroom(input.getText().toString(),
-                        FirebaseAuth.getInstance().getCurrentUser().getDisplayName()));
-                //Ambil data dari database firebase
+                FirebaseDatabase.getInstance().getReference().child("Pesan").push().setValue(new activity_chatroom(input.getText().toString(),
+                                FirebaseAuth.getInstance().getCurrentUser().getDisplayName()));
+                //Setelah pencet send makan edittext akan di clear
                 input.setText("");
             }
         });
@@ -57,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
     public void displayMessages() {
         ListView listOfMessages = (ListView) findViewById(R.id.list_of_messages);
         FirebaseListAdapter<activity_chatroom> adapter = new FirebaseListAdapter<activity_chatroom>
-                (this, activity_chatroom.class, R.layout.activity_chatroom, FirebaseDatabase.getInstance().getReference()) {
+                (this, activity_chatroom.class, R.layout.activity_chatroom,
+                        FirebaseDatabase.getInstance().getReference().child("Pesan")) {
             @Override
             //model nama var
             protected void populateView(View v, activity_chatroom model, int position) {

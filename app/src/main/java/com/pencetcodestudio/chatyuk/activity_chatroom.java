@@ -2,7 +2,6 @@ package com.pencetcodestudio.chatyuk;
 
 import java.util.Date;
 
-
 public class activity_chatroom {
     private String messageText;
     private String messageUser;
