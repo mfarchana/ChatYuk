@@ -16,9 +16,7 @@ import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseListAdapter;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,17 +25,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     int SIGN_IN_REQUEST_CODE = 1;
-    private static final String APP_ID = "ca-app-pub-5466668563968121~4560384747";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Initialize the Mobile Ads SDK.
-        MobileAds.initialize(this, APP_ID);
-        AdView adview = (AdView) findViewById(R.id.adView);
-        AdRequest  adRequest = new AdRequest.Builder().build();
-        adview.loadAd(adRequest);
+
 
 
         //Posisi login, apakah udah login atau belum

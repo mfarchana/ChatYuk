@@ -2,4 +2,8 @@
     <string name="app_name">ChatYuk</string>
     <string name="banner_app_id">ca-app-pub-5466668563968121~4560384747</string>
     <string name="banner_home_footer">ca-app-pub-5466668563968121/3022397208</string>
+    <string name="JabatanAan">Leader [Programmer]\n\nMochamad Farchan Ardiatama</string>
+    <string name="JabatanYudhi">[Designer] \n\nYudhi Tri Pamungkas</string>
+    <string name="JabatanBash">[Developer]\n\nBashirul</string>
+
 </resources>

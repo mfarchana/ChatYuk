@@ -17,15 +17,6 @@
         android:tint="@android:color/black"
         app:fabSize="mini" />
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/input"
-        android:layout_centerHorizontal="true"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-5466668563968121/9864273191" />
-
     <EditText
         android:id="@+id/input"
         android:layout_width="match_parent"
