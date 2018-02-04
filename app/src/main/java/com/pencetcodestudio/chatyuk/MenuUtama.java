@@ -9,7 +9,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
 public class MenuUtama extends AppCompatActivity {
-    private static final String APP_ID = "ca-app-pub-5466668563968121~4560384747";
+    private static final String APP_ID = "ca-app-pub-5279612574272912~5071754081";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
